@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">House Rent</string>
+
+    <string-array name="City">
+        <item>Asaba</item>
+        <item>Warri</item>
+        <item>Ughelli</item>
+        <item>Agbor</item>
+        <item>Sapele</item>
+        <item>Effurun</item>
+        <item>Patani</item>
+        <item>Kwale</item>
+        <item>Abraka</item>
+        <item>Orerokpe</item>
+
+    </string-array>
+</resources>
