@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.chuks.houserental.R
 import com.chuks.houserental.databinding.ItemImgBinding
 import com.chuks.houserental.model.User
 
@@ -15,11 +16,12 @@ class Myadapter1(var users:List<User>, val click:(User) -> Unit):RecyclerView.Ad
         RecyclerView.ViewHolder(binding.root){
     fun bind ( user: User){
     binding.apply {
-        propertyOneName.text = user.username
+        //propertyOneName.text = user.username
         //description.text = user.email
 
        Glide.with(binding.root)
-            .load("https://www.picsum.photos/200/300")
+            //.load("https://www.picsum.photos/200/300")
+           .load(R.drawable.imageone)
             .centerCrop()
             .into(NearImage)
         root.setOnClickListener { click (user) }
