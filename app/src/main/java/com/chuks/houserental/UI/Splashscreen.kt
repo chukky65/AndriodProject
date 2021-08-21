@@ -12,6 +12,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.chuks.houserental.MainActivity
 import com.chuks.houserental.R
+import com.chuks.houserental.RegisterActivity
 
 class Splashscreen : AppCompatActivity() {
 
@@ -36,16 +37,16 @@ class Splashscreen : AppCompatActivity() {
         bottomAnimation = AnimationUtils.loadAnimation(this, R.anim.bottom_animation)
 
         imageView = findViewById(R.id.hr_dshr)
-        titletxt = findViewById(R.id.title_text)
-        descriptiontxt = findViewById(R.id.text_vieww)
+       // titletxt = findViewById(R.id.title_text)
+       // descriptiontxt = findViewById(R.id.text_vieww)
 
-        imageView.animation = topAnimation
-        titletxt.animation = bottomAnimation
-        descriptiontxt.animation = bottomAnimation
+      //  imageView.animation = topAnimation
+     //   titletxt.animation = bottomAnimation
+     //   descriptiontxt.animation = bottomAnimation
 
         Handler((Looper.getMainLooper())).postDelayed({
 
-            val intent = Intent(this, MainActivity :: class.java)
+            val intent = Intent(this, RegisterActivity :: class.java)
             startActivity(intent)
             finish()
 

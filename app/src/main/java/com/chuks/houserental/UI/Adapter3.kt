@@ -22,6 +22,7 @@ class Adapter3 (var users:List<User>, val click:(User) -> Unit): RecyclerView.Ad
                  //   .load("https://www.picsum.photos/200/300")
                     .load(R.drawable.imagetwo)
                     .centerCrop()
+                    .centerInside()
                     .into(hotImage)
                 root.setOnClickListener { click (user) }
             }

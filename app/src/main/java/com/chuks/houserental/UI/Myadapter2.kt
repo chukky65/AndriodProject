@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.chuks.houserental.R
 import com.chuks.houserental.databinding.ItemListBinding
 import com.chuks.houserental.model.User
 
@@ -19,7 +20,8 @@ class Myadapter2(var users:List<User>, val click:(User) -> Unit):
                 //email.text = user.email
 
                 Glide.with(binding.root)
-                    .load("https://www.picsum.photos/200/300")
+                    //.load("https://www.picsum.photos/200/300")
+                    .load(R.drawable.house)
                     .centerCrop()
                     .into(RecommendedImage)
                 root.setOnClickListener { click(user) }
