@@ -27,7 +27,7 @@
 
 
         <TextView
-            android:id="@+id/listBuildingName"
+            android:id="@+id/propertyTypeTxt"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -41,7 +41,7 @@
             app:layout_constraintTop_toTopOf="@+id/RecommendedImage" />
 
         <TextView
-            android:id="@+id/listAmount"
+            android:id="@+id/propertyPriceTxt"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
@@ -50,8 +50,8 @@
             android:textColor="@color/black"
             android:textSize="11sp"
             android:textStyle="normal"
-            app:layout_constraintStart_toStartOf="@+id/listBuildingName"
-            app:layout_constraintTop_toBottomOf="@+id/listBuildingName" />
+            app:layout_constraintStart_toStartOf="@+id/propertyTypeTxt"
+            app:layout_constraintTop_toBottomOf="@+id/propertyTypeTxt" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -59,8 +59,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="18dp"
-            app:layout_constraintStart_toEndOf="@+id/listAmount"
-            app:layout_constraintTop_toBottomOf="@+id/listBuildingName"
+            app:layout_constraintStart_toEndOf="@+id/propertyPriceTxt"
+            app:layout_constraintTop_toBottomOf="@+id/propertyTypeTxt"
             app:srcCompat="@drawable/line" />
 
         <ImageView
@@ -70,18 +70,18 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/listBuildingName"
+            app:layout_constraintTop_toBottomOf="@+id/propertyTypeTxt"
             app:srcCompat="@drawable/ic_baseline_location_on_24" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/cityTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="18dp"
             android:text="Kwale"
             app:layout_constraintStart_toEndOf="@+id/imageView5"
-            app:layout_constraintTop_toBottomOf="@+id/listBuildingName" />
+            app:layout_constraintTop_toBottomOf="@+id/propertyTypeTxt" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

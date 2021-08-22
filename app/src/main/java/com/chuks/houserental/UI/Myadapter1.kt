@@ -16,11 +16,9 @@ class Myadapter1(var users:List<User>, val click:(User) -> Unit):RecyclerView.Ad
         RecyclerView.ViewHolder(binding.root){
     fun bind ( user: User){
     binding.apply {
-        //propertyOneName.text = user.username
-        //description.text = user.email
+
 
        Glide.with(binding.root)
-            //.load("https://www.picsum.photos/200/300")
            .load(R.drawable.imageone)
             .centerCrop()
             .into(NearImage)

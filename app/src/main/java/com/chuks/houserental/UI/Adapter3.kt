@@ -15,11 +15,11 @@ class Adapter3 (var users:List<User>, val click:(User) -> Unit): RecyclerView.Ad
         RecyclerView.ViewHolder(binding.root){
         fun bind ( user: User){
             binding.apply {
-                //hotOneName.text = user.username
-                //description.text = user.email
+   /**             hotCityTxt.text = user.property.city
+               hotPropertyPrice.text = user.property.propertyPrice
+               hotPropertyType.text = user.property.propertyType     **/
 
                 Glide.with(binding.root)
-                 //   .load("https://www.picsum.photos/200/300")
                     .load(R.drawable.imagetwo)
                     .centerCrop()
                     .into(hotImage)

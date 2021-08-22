@@ -3,17 +3,12 @@ package com.chuks.houserental
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
-import android.view.animation.Animation
 import android.widget.*
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.chuks.houserental.UI.Adapter3
-import com.chuks.houserental.UI.Image
 import com.chuks.houserental.UI.Myadapter1
 import com.chuks.houserental.databinding.ActivityMainBinding
-import com.chuks.houserental.databinding.ItemListBinding
 import com.isaac.houserentalapp.ui.MainViewModel
 import com.isaac.houserentalapp.ui.Myadapter2
 
@@ -63,7 +58,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             viewModel.run {
-                getUsers()
+                getProperty()
                 userLiveData.observe(this@MainActivity, { users ->
 
                     myadapter1.users = users

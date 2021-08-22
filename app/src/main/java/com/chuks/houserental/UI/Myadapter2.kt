@@ -15,9 +15,9 @@ class Myadapter2(var users:List<User>, val click:(User) -> Unit):
         RecyclerView.ViewHolder(binding.root){
         fun bind ( user: User){
             binding.apply {
-                listBuildingName.text = user.username
-                //email.text = user.email
-
+    /**          propertyPriceTxt.text = user.property.propertyPrice
+              propertyTypeTxt.text = user.property.propertyType
+              cityTxt.text = user.property.city   **/
                 Glide.with(binding.root)
                     .load("https://www.picsum.photos/200/300")
                     .centerCrop()

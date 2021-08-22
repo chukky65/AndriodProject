@@ -10,9 +10,9 @@ import kotlinx.coroutines.launch
 class MainViewModel: ViewModel(){
     val userLiveData = MutableLiveData<List<User>>()
 
-    fun getUsers(){
+    fun getProperty(){
         viewModelScope.launch {
-            userLiveData.postValue(Api_Provider.apiProvider.getUsers())
+            userLiveData.postValue(Api_Provider.apiProvider.getProperty())
         }
 
     }    }

@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object Api_Provider {
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://jsonplaceholder.typicode.com/")
+        .baseUrl("https://ict-yep.herokuapp.com/api/v1/properties/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
