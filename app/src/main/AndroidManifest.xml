@@ -3,6 +3,7 @@
     package="com.chuks.houserental">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -16,9 +17,6 @@
             android:exported="true" />
         <activity
             android:name=".RegisterActivity"
-            android:exported="true" />
-        <activity
-            android:name=".model.RegisterActivity"
             android:exported="true" />
         <activity android:name=".UI.Splashscreen">
             <intent-filter>
