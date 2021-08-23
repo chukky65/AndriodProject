@@ -7,29 +7,29 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.chuks.houserental.R
 import com.chuks.houserental.databinding.ItemImgBinding
+import com.chuks.houserental.model.Data
 import com.chuks.houserental.model.User
 
 
-class Myadapter1(var users:List<User>, val click:(User) -> Unit):RecyclerView.Adapter<Myadapter1.MyViewHolder1>() {
+class Myadapter1(var users: List<Data>, val click: (Data) -> Unit) :
+    RecyclerView.Adapter<Myadapter1.MyViewHolder1>() {
 
-   inner  class MyViewHolder1(private val binding: ItemImgBinding) :
-        RecyclerView.ViewHolder(binding.root){
-    fun bind ( user: User){
-    binding.apply {
-
-
-       Glide.with(binding.root)
-           .load(R.drawable.imageone)
-            .centerCrop()
-            .into(NearImage)
-        root.setOnClickListener { click (user) }
-    }
-    }
+    inner class MyViewHolder1(private val binding: ItemImgBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(user: Data) {
+            binding.apply {
+                Glide.with(binding.root)
+                    .load(user.propertyImages[0])
+                    .centerCrop()
+                    .into(NearImage)
+                root.setOnClickListener { click(user) }
+            }
+        }
     }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Myadapter1.MyViewHolder1 {
-        val binding= ItemImgBinding.inflate(LayoutInflater.from(parent.context))
+        val binding = ItemImgBinding.inflate(LayoutInflater.from(parent.context))
         return MyViewHolder1(binding)
     }
 
@@ -38,6 +38,6 @@ class Myadapter1(var users:List<User>, val click:(User) -> Unit):RecyclerView.Ad
     }
 
     override fun getItemCount(): Int {
-    return users.size
+        return users.size
     }
 }

@@ -5,21 +5,22 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.chuks.houserental.databinding.ItemListBinding
+import com.chuks.houserental.model.Data
 import com.chuks.houserental.model.User
 
 
-class Myadapter2(var users:List<User>, val click:(User) -> Unit):
+class Myadapter2(var users:List<Data>, val click:(Data) -> Unit):
     RecyclerView.Adapter<Myadapter2.MyViewHolder2>() {
 
    inner  class MyViewHolder2(private val binding: ItemListBinding) :
         RecyclerView.ViewHolder(binding.root){
-        fun bind ( user: User){
+        fun bind ( user: Data){
             binding.apply {
-    /**          propertyPriceTxt.text = user.property.propertyPrice
-              propertyTypeTxt.text = user.property.propertyType
-              cityTxt.text = user.property.city   **/
+            propertyPriceTxt.text = user.propertyType
+             propertyTypeTxt.text = user.propertyType
+              cityTxt.text = user.city
                 Glide.with(binding.root)
-                    .load("https://www.picsum.photos/200/300")
+                    .load(user.propertyImages)
                     .centerCrop()
                     .into(RecommendedImage)
                 root.setOnClickListener { click(user) }

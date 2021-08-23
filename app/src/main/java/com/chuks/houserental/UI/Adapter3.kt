@@ -7,17 +7,18 @@ import com.bumptech.glide.Glide
 import com.chuks.houserental.R
 import com.chuks.houserental.databinding.ItemHotBinding
 import com.chuks.houserental.databinding.ItemImgBinding
+import com.chuks.houserental.model.Data
 import com.chuks.houserental.model.User
 
-class Adapter3 (var users:List<User>, val click:(User) -> Unit): RecyclerView.Adapter<Adapter3.ViewHolder3>() {
+class Adapter3 (var users:List<Data>, val click:(Data) -> Unit): RecyclerView.Adapter<Adapter3.ViewHolder3>() {
 
     inner  class ViewHolder3(private val binding: ItemHotBinding) :
         RecyclerView.ViewHolder(binding.root){
-        fun bind ( user: User){
+        fun bind ( user: Data){
             binding.apply {
-   /**             hotCityTxt.text = user.property.city
-               hotPropertyPrice.text = user.property.propertyPrice
-               hotPropertyType.text = user.property.propertyType     **/
+               hotCityTxt.text = user.city
+               hotPropertyPrice.text = user.propertyPrice.toString()
+               hotPropertyType.text = user.propertyType
 
                 Glide.with(binding.root)
                     .load(R.drawable.imagetwo)

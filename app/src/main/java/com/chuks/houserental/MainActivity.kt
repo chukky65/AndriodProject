@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             viewModel.run {
-                getProperty()
+                getUsers()
                 userLiveData.observe(this@MainActivity, { users ->
 
                     myadapter1.users = users
@@ -76,16 +76,6 @@ class MainActivity : AppCompatActivity() {
 }
 
 
-
-       // binding.btnAgent.setOnClickListener {
-      //      HomePage()
-      //  }
- //   }
-
-     //   private fun HomePage() {
-       //     val home: Intent = Intent(this, house2screen::class.java)
-         //   startActivity(home)
-       // }
 
 
 
