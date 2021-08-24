@@ -21,9 +21,9 @@ class Myadapter1(var users: List<Data>, val click: (Data) -> Unit) :
                 NearPropertyType.text = user.propertyType
                 NearCityTxt.text = user.city
                // NearPropertyPrice.text = user.propertyPrice.toString()
-                val domainhost: String = "https://ict-yep.herokuapp.com"
+                val domainhost: String = "https://ict-yep.herokuapp.com${user.propertyImages[0]}"
                 Glide.with(binding.root)
-                    .load(domainhost + user.propertyImages[0])
+                    .load(domainhost)
                     .centerCrop()
                     .error(R.drawable.house)
                     .into(NearImage)

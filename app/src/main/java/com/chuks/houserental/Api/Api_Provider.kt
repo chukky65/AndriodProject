@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit
 
 object Api_Provider {
     private val interceptor = HttpLoggingInterceptor().also {
-        it.level = HttpLoggingInterceptor.Level.BASIC
+        it.setLevel(HttpLoggingInterceptor.Level.BASIC)
     }
 
     private val client =
@@ -16,7 +16,7 @@ object Api_Provider {
             .build()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://ict-yep.herokuapp.com/api/v1/properties/")
+        .baseUrl("https://ict-yep.herokuapp.com/api/v1/")
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build()

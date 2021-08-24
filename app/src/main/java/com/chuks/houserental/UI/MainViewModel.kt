@@ -1,5 +1,6 @@
 package com.isaac.houserentalapp.ui
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -13,7 +14,11 @@ class MainViewModel : ViewModel() {
 
     fun getUsers() {
         viewModelScope.launch {
-            userLiveData.postValue(Api_Provider.apiProvider.getUsers().data)
+            try{
+                userLiveData.postValue(Api_Provider.apiProvider.getUsers().data)
+            }catch (t: Throwable){
+                Log.e("Main Project", t.message.toString())
+            }
         }
     }
 }

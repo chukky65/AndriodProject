@@ -17,7 +17,7 @@ class Adapter3 (var users:List<Data>, val click:(Data) -> Unit): RecyclerView.Ad
         fun bind ( user: Data){
             binding.apply {
                hotCityTxt.text = user.city
-              // hotPropertyPrice.text = user.propertyPrice.toString()
+               hotPropertyPrice.text = user.propertyPrice.toString()
                hotPropertyType.text = user.propertyType
 
                 val domainhost: String = "https://ict-yep.herokuapp.com"
