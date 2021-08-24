@@ -18,9 +18,14 @@ class Myadapter1(var users: List<Data>, val click: (Data) -> Unit) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(user: Data) {
             binding.apply {
+                NearPropertyType.text = user.propertyType
+                NearCityTxt.text = user.city
+               // NearPropertyPrice.text = user.propertyPrice.toString()
+                val domainhost: String = "https://ict-yep.herokuapp.com"
                 Glide.with(binding.root)
-                    .load(user.propertyImages[0])
+                    .load(domainhost + user.propertyImages[0])
                     .centerCrop()
+                    .error(R.drawable.house)
                     .into(NearImage)
                 root.setOnClickListener { click(user) }
             }

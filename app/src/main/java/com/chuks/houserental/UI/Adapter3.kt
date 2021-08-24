@@ -17,11 +17,13 @@ class Adapter3 (var users:List<Data>, val click:(Data) -> Unit): RecyclerView.Ad
         fun bind ( user: Data){
             binding.apply {
                hotCityTxt.text = user.city
-               hotPropertyPrice.text = user.propertyPrice.toString()
+              // hotPropertyPrice.text = user.propertyPrice.toString()
                hotPropertyType.text = user.propertyType
 
+                val domainhost: String = "https://ict-yep.herokuapp.com"
                 Glide.with(binding.root)
-                    .load(R.drawable.imagetwo)
+                    .load(domainhost + user.propertyImages[0])
+                    .error(R.drawable.imagetwo)
                     .centerCrop()
                     .into(hotImage)
                 root.setOnClickListener { click (user) }

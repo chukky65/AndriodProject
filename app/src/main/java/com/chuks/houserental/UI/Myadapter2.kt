@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.chuks.houserental.R
 import com.chuks.houserental.databinding.ItemListBinding
 import com.chuks.houserental.model.Data
 import com.chuks.houserental.model.User
@@ -16,13 +17,15 @@ class Myadapter2(var users:List<Data>, val click:(Data) -> Unit):
         RecyclerView.ViewHolder(binding.root){
         fun bind ( user: Data){
             binding.apply {
-            propertyPriceTxt.text = user.propertyType
-             propertyTypeTxt.text = user.propertyType
-              cityTxt.text = user.city
+           // listPropertyPriceTxt.text = user.propertyPrice.toString()
+             listPropertyTypeTxt.text = user.propertyType
+              listCityTxt.text = user.city
+                val domainhost: String = "https://ict-yep.herokuapp.com"
                 Glide.with(binding.root)
-                    .load(user.propertyImages)
+                    .load(domainhost + user.propertyImages)
+                    .error(R.drawable.imagetwo)
                     .centerCrop()
-                    .into(RecommendedImage)
+                    .into(listImage)
                 root.setOnClickListener { click(user) }
 
 
