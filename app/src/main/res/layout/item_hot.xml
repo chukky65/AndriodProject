@@ -28,52 +28,52 @@
 
 
         <TextView
-            android:id="@+id/hotOneName"
-            android:layout_width="180dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins_semibold"
+            android:id="@+id/hotPropertyType"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="16dp"
             android:text="Semi Detached Duplex"
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hotImage" />
 
         <TextView
-            android:id="@+id/hotLocation"
+            android:id="@+id/hotCityTxt"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="5dp"
             android:text="Asaba"
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="normal"
             app:layout_constraintStart_toEndOf="@+id/imageView6"
-            app:layout_constraintTop_toBottomOf="@+id/hotOneName" />
+            app:layout_constraintTop_toBottomOf="@+id/hotPropertyType" />
 
         <TextView
-            android:id="@+id/hotAmount"
+            android:id="@+id/hotPropertyPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="5dp"
             android:text="N900,000"
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/imageView7"
-            app:layout_constraintTop_toBottomOf="@+id/hotOneName" />
+            app:layout_constraintTop_toBottomOf="@+id/hotPropertyType" />
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@+id/hotOneName"
-            app:layout_constraintTop_toBottomOf="@+id/hotOneName"
+            android:layout_marginTop="3dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hotPropertyType"
             app:srcCompat="@drawable/ic_baseline_location_on_24" />
 
         <ImageView
@@ -81,9 +81,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="3dp"
-            app:layout_constraintStart_toEndOf="@+id/hotLocation"
-            app:layout_constraintTop_toBottomOf="@+id/hotOneName"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toEndOf="@+id/hotCityTxt"
+            app:layout_constraintTop_toBottomOf="@+id/hotPropertyType"
             app:srcCompat="@drawable/line" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

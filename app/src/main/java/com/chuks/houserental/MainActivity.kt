@@ -83,16 +83,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-       // binding.btnAgent.setOnClickListener {
-      //      HomePage()
-      //  }
- //   }
-
-     //   private fun HomePage() {
-       //     val home: Intent = Intent(this, house2screen::class.java)
-         //   startActivity(home)
-       // }
-
 
 
 

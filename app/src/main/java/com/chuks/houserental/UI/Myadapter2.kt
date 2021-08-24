@@ -6,24 +6,26 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.chuks.houserental.R
 import com.chuks.houserental.databinding.ItemListBinding
+import com.chuks.houserental.model.Data
 import com.chuks.houserental.model.User
 
 
-class Myadapter2(var users:List<User>, val click:(User) -> Unit):
+class Myadapter2(var users:List<Data>, val click:(Data) -> Unit):
     RecyclerView.Adapter<Myadapter2.MyViewHolder2>() {
 
    inner  class MyViewHolder2(private val binding: ItemListBinding) :
         RecyclerView.ViewHolder(binding.root){
-        fun bind ( user: User){
+        fun bind ( user: Data){
             binding.apply {
-                listBuildingName.text = user.username
-                //email.text = user.email
-
+           // listPropertyPriceTxt.text = user.propertyPrice.toString()
+             listPropertyTypeTxt.text = user.propertyType
+              listCityTxt.text = user.city
+                val domainhost: String = "https://ict-yep.herokuapp.com"
                 Glide.with(binding.root)
-                    //.load("https://www.picsum.photos/200/300")
-                    .load(R.drawable.house)
+                    .load(domainhost + user.propertyImages)
+                    .error(R.drawable.imagetwo)
                     .centerCrop()
-                    .into(RecommendedImage)
+                    .into(listImage)
                 root.setOnClickListener { click(user) }
 
 
