@@ -25,6 +25,7 @@ class Adapter3 (var users:List<Data>, val click:(Data) -> Unit): RecyclerView.Ad
                     .load(domainhost + user.propertyImages[0])
                     .error(R.drawable.imagetwo)
                     .centerCrop()
+                    .centerInside()
                     .into(hotImage)
                 root.setOnClickListener { click (user) }
             }

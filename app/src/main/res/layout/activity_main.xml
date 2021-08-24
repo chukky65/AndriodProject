@@ -9,6 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#E5E5E5"
         tools:context=".MainActivity">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -36,43 +37,41 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0" />
+                    app:layout_constraintVertical_bias="0.0" />
 
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="40dp"
+                <EditText
+                    android:id="@+id/editTextTextPersonName"
+                    android:layout_width="320dp"
                     android:layout_height="40dp"
-                    app:srcCompat="@drawable/img_3"
-                    tools:layout_editor_absoluteX="326dp"
-                    tools:layout_editor_absoluteY="8dp" />
+                    android:background="#F8F8F8"
+                    android:drawableStart="@drawable/ic_baseline_search_24"
+                    android:drawableEnd="@drawable/ic_baseline_filter_tilt_shift_24"
+                    android:ems="10"
+                    android:hint="Search by city, location and property type"
+                    android:inputType="textPersonName"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/Toolbar"
+                    app:layout_constraintEnd_toEndOf="@+id/Toolbar"
+                    app:layout_constraintHorizontal_bias="0.494"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchView"
-            android:layout_width="328dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="6dp"
-            android:background="@drawable/button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/appBarLayout"
-            app:layout_constraintTop_toTopOf="@+id/appBarLayout"
-            app:queryHint="search houses near you"
-            tools:ignore="MissingConstraints">
 
-        </androidx.appcompat.widget.SearchView>
 
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="65dp"
+            android:layout_width="wrap_content"
             android:layout_height="22dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="16dp"
-            android:text="Near you"
-            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Properties Near you"
+            android:textColor="#2B2B2B"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -81,12 +80,11 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvGrid"
             android:layout_width="match_parent"
-            android:layout_height="242dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:listitem="@layout/item_img" />
@@ -94,15 +92,14 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvHot"
             android:layout_width="match_parent"
-            android:layout_height="242dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5"
-            tools:listitem="@layout/item_img" />
+            tools:listitem="@layout/item_hot" />
 
 
         <TextView
@@ -121,9 +118,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppins_semibold"
             android:lineHeight="24px"
             android:text="hot lease"
+            android:textColor="#2B2B2B"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -134,9 +133,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppins_semibold"
             android:lineHeight="24px"
             android:text="Recommended"
+            android:textColor="#2B2B2B"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -147,7 +148,7 @@
             android:id="@+id/rvGrid2"
             android:layout_width="match_parent"
             android:layout_height="230dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="4dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
