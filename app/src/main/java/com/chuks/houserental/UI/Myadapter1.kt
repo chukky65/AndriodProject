@@ -20,12 +20,12 @@ class Myadapter1(var users: List<Data>, val click: (Data) -> Unit) :
             binding.apply {
                 NearPropertyType.text = user.propertyType
                 NearCityTxt.text = user.city
-               // NearPropertyPrice.text = user.propertyPrice.toString()
-                val domainhost: String = "https://ict-yep.herokuapp.com${user.propertyImages[0]}"
+                NearPropertyPrice.text = user.propertyPrice.toString()
+                val domainhost: String = "https://res.cloudinary.com/japezdigital/image/upload/v1630167731/property-rentals/property-images/1_kui7zh.jpg"
                 Glide.with(binding.root)
                     .load(domainhost)
                     .centerCrop()
-                    .error(R.drawable.house)
+                    .error(R.drawable.imagwthree)
                     .into(NearImage)
                 root.setOnClickListener { click(user) }
             }

@@ -20,9 +20,9 @@ class Adapter3 (var users:List<Data>, val click:(Data) -> Unit): RecyclerView.Ad
                hotPropertyPrice.text = user.propertyPrice.toString()
                hotPropertyType.text = user.propertyType
 
-                val domainhost: String = "https://ict-yep.herokuapp.com"
+                val domainhost: String = "https://ict-yep.herokuapp.com${user.propertyImages[0]}"
                 Glide.with(binding.root)
-                    .load(domainhost + user.propertyImages[0])
+                    .load(domainhost)
                     .error(R.drawable.imagetwo)
                     .centerCrop()
                     .centerInside()

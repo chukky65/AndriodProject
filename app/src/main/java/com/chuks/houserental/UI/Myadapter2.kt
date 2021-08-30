@@ -13,16 +13,16 @@ import com.chuks.houserental.model.User
 class Myadapter2(var users:List<Data>, val click:(Data) -> Unit):
     RecyclerView.Adapter<Myadapter2.MyViewHolder2>() {
 
-   inner  class MyViewHolder2(private val binding: ItemListBinding) :
+   inner class MyViewHolder2(private val binding: ItemListBinding) :
         RecyclerView.ViewHolder(binding.root){
         fun bind ( user: Data){
             binding.apply {
-           // listPropertyPriceTxt.text = user.propertyPrice.toString()
+            listPropertyPriceTxt.text = user.propertyPrice.toString()
              listPropertyTypeTxt.text = user.propertyType
               listCityTxt.text = user.city
-                val domainhost: String = "https://ict-yep.herokuapp.com"
+               // val domainhost: String = "https://ict-yep.herokuapp.com${user.propertyImages[0]}"
                 Glide.with(binding.root)
-                    .load(domainhost + user.propertyImages)
+                    .load(user.propertyImages)
                     .error(R.drawable.imagetwo)
                     .centerCrop()
                     .into(listImage)

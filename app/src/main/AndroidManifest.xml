@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -26,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".house2screen"
+            android:name=".House2screen"
             android:exported="true"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity" />

@@ -12,7 +12,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.chuks.houserental.MainActivity
 import com.chuks.houserental.R
-import com.chuks.houserental.RegisterActivity
 
 class Splashscreen : AppCompatActivity() {
 
@@ -46,7 +45,7 @@ class Splashscreen : AppCompatActivity() {
 
         Handler((Looper.getMainLooper())).postDelayed({
 
-            val intent = Intent(this, RegisterActivity :: class.java)
+            val intent = Intent(this, MainActivity :: class.java)
             startActivity(intent)
             finish()
 
