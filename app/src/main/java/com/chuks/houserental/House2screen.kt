@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.core.app.ActivityCompat
+import com.bumptech.glide.Glide
 import com.chuks.houserental.databinding.ActivityHouse2ScreenBinding
 
 
@@ -26,6 +27,11 @@ class House2screen : AppCompatActivity() {
         textView.isSelected = true
 
         binding.apply {
+            val images = intent.getStringArrayExtra("images")
+            Glide.with(root).load(images?.get(0)).error(R.drawable.imagwthree).into(imageView20)
+            Glide.with(root).load(images?.get(1)).error(R.drawable.imagwthree).into(imageView16)
+            Glide.with(root).load(images?.get(2)).error(R.drawable.imagwthree).into(imageView17)
+            Glide.with(root).load(images?.get(3)).error(R.drawable.imagwthree).into(imageView18)
             textView8.text = intent.getStringExtra("description")
             propertyOneName.text = intent.getStringExtra("type")
             city.text = intent.getStringExtra("location")
@@ -33,9 +39,6 @@ class House2screen : AppCompatActivity() {
             propertyPrice.text = intent.getStringExtra("price").toString()
             textView11.text = intent.getStringExtra("title")
         }
-        // adapter 3
-
-        // adapter 2
 
             binding.callbtn.setOnClickListener {
                 if (ActivityCompat.checkSelfPermission
@@ -48,7 +51,24 @@ class House2screen : AppCompatActivity() {
                     makeCall()
                 }
             }
-            // binding.arrow.setOnClickListener {
+        binding.callbtn2.setOnClickListener {
+            whatsapp()
+        }
+        binding.textView13.setOnClickListener {
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/forms/d/e/1FAIpQLSfnBnINbZKqu_-ZfH0toRDh19-nCz_P8DgNEwEpc2u8K3qZ6g/viewform?vc=0&c=0&w=1&flr=0"))
+       startActivity(i)
+        }
+        binding.feedback.setOnClickListener {
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/forms/d/e/1FAIpQLSfnBnINbZKqu_-ZfH0toRDh19-nCz_P8DgNEwEpc2u8K3qZ6g/viewform?vc=0&c=0&w=1&flr=0"))
+            startActivity(i)
+        }
+        binding.feedback2.setOnClickListener {
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/forms/d/e/1FAIpQLSfnBnINbZKqu_-ZfH0toRDh19-nCz_P8DgNEwEpc2u8K3qZ6g/viewform?vc=0&c=0&w=1&flr=0"))
+            startActivity(i)
+        }
+
+
+        // binding.arrow.setOnClickListener {
             //  back()
             //  }
             setSupportActionBar(binding.myToolbar)
@@ -65,7 +85,8 @@ class House2screen : AppCompatActivity() {
         permissions: Array<out String>,
         grantResults: IntArray
     ) {
-       if (requestCode==REQUEST_PHONE_CALL)
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode==REQUEST_PHONE_CALL)
        {
            makeCall()
        }
@@ -76,5 +97,11 @@ class House2screen : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
+    private fun whatsapp() {
+        val intent: Intent = Intent(Intent.ACTION_SEND, Uri.fromParts("tel",mobile,null))
+            intent.type = "text/plain"
+            startActivity(Intent.createChooser(intent, "Select App"))
+        }
     }
+
+

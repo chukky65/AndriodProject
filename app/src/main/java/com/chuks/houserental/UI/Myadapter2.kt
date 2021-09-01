@@ -17,12 +17,13 @@ class Myadapter2(var users:List<Data>, val click:(Data) -> Unit):
         RecyclerView.ViewHolder(binding.root){
         fun bind ( user: Data){
             binding.apply {
-            listPropertyPriceTxt.text = user.propertyPrice.toString()
+           // listPropertyPriceTxt.text = user.propertyPrice.toString()
              listPropertyTypeTxt.text = user.propertyType
               listCityTxt.text = user.city
-               // val domainhost: String = "https://ict-yep.herokuapp.com${user.propertyImages[0]}"
-                Glide.with(binding.root)
-                    .load(user.propertyImages)
+
+                val imageUrl = user.propertyImages[0]
+                Glide.with(root)
+                    .load(imageUrl)
                     .error(R.drawable.imagetwo)
                     .centerCrop()
                     .into(listImage)

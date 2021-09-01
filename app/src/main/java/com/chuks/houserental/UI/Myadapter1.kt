@@ -21,9 +21,10 @@ class Myadapter1(var users: List<Data>, val click: (Data) -> Unit) :
                 NearPropertyType.text = user.propertyType
                 NearCityTxt.text = user.city
                 NearPropertyPrice.text = user.propertyPrice.toString()
-                val domainhost: String = "https://res.cloudinary.com/japezdigital/image/upload/v1630167731/property-rentals/property-images/1_kui7zh.jpg"
-                Glide.with(binding.root)
-                    .load(domainhost)
+               // val domainhost: String = "https://res.cloudinary.com/japezdigital/image/upload/v1630167731/property-rentals/property-images/1_kui7zh.jpg"
+                val imageUrl = user.propertyImages[0]
+                Glide.with(root)
+                    .load(imageUrl)
                     .centerCrop()
                     .error(R.drawable.imagwthree)
                     .into(NearImage)

@@ -28,10 +28,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Date and time
-        val textView:TextView = binding.dateAndTime
-        val simpleDateFormat =SimpleDateFormat("yyyy.MM.dd 'at' HH.mm.ss")
-        val currentDateAndTime:String=simpleDateFormat.format(Date())
-        textView.text = currentDateAndTime
+     //   val textView:TextView = binding.dateAndTime
+     //   val simpleDateFormat =SimpleDateFormat("yyyy.MM.dd 'at' HH.mm.ss")
+     //   val currentDateAndTime:String=simpleDateFormat.format(Date())
+     //   textView.text = currentDateAndTime
 
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
@@ -39,13 +39,13 @@ class MainActivity : AppCompatActivity() {
         myadapter1 = Myadapter1(listOf()) {
             val intent = Intent(this@MainActivity, House2screen::class.java)
 
-         //   intent.putExtra("NearImage", it.propertyImages)
+            intent.putExtra("images", it.propertyImages.toTypedArray())
             intent.putExtra("description", it.propertyDescription)
             intent.putExtra("type", it.propertyType)
             intent.putExtra("location", it.city)
             intent.putExtra("price", it.propertyPrice.toString())
             intent.putExtra("rooms", it.numberOfRooms.toString())
-            intent.putExtra("title", it.title)
+            intent.putExtra("title", it.landmark)
             startActivity(intent)
         }
         binding.rvGrid.apply {
@@ -55,13 +55,13 @@ class MainActivity : AppCompatActivity() {
 
             adapter3 = Adapter3(listOf()) {
                 val intent = Intent(this@MainActivity, House2screen::class.java)
-                //   intent.putExtra("NearImage", it.propertyImages)
+                intent.putExtra("images", it.propertyImages.toTypedArray())
                 intent.putExtra("description", it.propertyDescription)
                 intent.putExtra("type", it.propertyType)
                 intent.putExtra("location", it.city)
                 intent.putExtra("price", it.propertyPrice.toString())
                 intent.putExtra("rooms", it.numberOfRooms.toString())
-                intent.putExtra("title", it.title)
+                intent.putExtra("title", it.landmark)
                 startActivity(intent)
 
             }
@@ -72,13 +72,13 @@ class MainActivity : AppCompatActivity() {
 
         myadapter2 = Myadapter2(listOf()) {
             val intent = Intent(this@MainActivity, House2screen::class.java)
-            //   intent.putExtra("NearImage", it.propertyImages)
+            intent.putExtra("images", it.propertyImages.toTypedArray())
             intent.putExtra("description", it.propertyDescription)
             intent.putExtra("type", it.propertyType)
             intent.putExtra("location", it.city)
             intent.putExtra("price", it.propertyPrice.toString())
             intent.putExtra("rooms", it.numberOfRooms.toString())
-            intent.putExtra("title", it.title)
+            intent.putExtra("title", it.landmark)
             startActivity(intent)
 
         }
@@ -90,7 +90,6 @@ class MainActivity : AppCompatActivity() {
             viewModel.run {
                 getUsers()
                 userLiveData.observe(this@MainActivity, { users ->
-
                     myadapter1.users = users
                     myadapter1.notifyDataSetChanged()
 

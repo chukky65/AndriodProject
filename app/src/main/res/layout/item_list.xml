@@ -22,6 +22,7 @@
             android:layout_width="400dp"
             android:layout_height="wrap_content">
 
+
             <ImageView
                 android:id="@+id/listImage"
                 android:layout_width="156dp"
@@ -31,78 +32,56 @@
                 android:src="@drawable/imagetwo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
             <TextView
                 android:id="@+id/listPropertyTypeTxt"
-                android:layout_width="wrap_content"
+                android:layout_width="133dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Semi Detached Bungalow"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
-                android:textSize="12sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/listImage"
                 app:layout_constraintTop_toTopOf="@+id/listImage" />
-
-            <TextView
-                android:id="@+id/listPropertyPriceTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="N700,000"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="11sp"
-                android:textStyle="normal"
-                app:layout_constraintStart_toStartOf="@+id/listPropertyTypeTxt"
-                app:layout_constraintTop_toBottomOf="@+id/listPropertyTypeTxt" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="7dp"
-                app:layout_constraintStart_toEndOf="@+id/textView13"
-                app:layout_constraintTop_toBottomOf="@+id/listPropertyTypeTxt"
-                app:srcCompat="@drawable/line" />
 
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="7dp"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="@+id/listPropertyTypeTxt"
                 app:layout_constraintTop_toBottomOf="@+id/listPropertyTypeTxt"
-                app:srcCompat="@drawable/ic_baseline_location_on_24" />
+                app:srcCompat="@drawable/ic_frame" />
+
+            <ImageView
+                android:id="@+id/imageArrow"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginBottom="4dp"
+                android:src="@drawable/ic_arrow_left__1_"
+                app:layout_constraintBottom_toBottomOf="@+id/listCityTxt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/listCityTxt" />
 
             <TextView
                 android:id="@+id/listCityTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="12dp"
                 android:text="Kwale"
                 app:layout_constraintStart_toEndOf="@+id/imageView5"
                 app:layout_constraintTop_toBottomOf="@+id/listPropertyTypeTxt" />
 
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:text="/yr"
-                android:textSize="12sp"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="@+id/listPropertyPriceTxt"
-                app:layout_constraintStart_toEndOf="@+id/listPropertyPriceTxt"
-                app:layout_constraintTop_toTopOf="@+id/listPropertyPriceTxt" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </FrameLayout>

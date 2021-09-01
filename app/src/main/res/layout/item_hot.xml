@@ -52,7 +52,7 @@
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
                 android:text="Asaba"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
                 android:text="N900,000"
                 android:textColor="@color/black"
                 android:textSize="12sp"
@@ -80,14 +80,16 @@
                 android:layout_marginTop="3dp"
                 app:layout_constraintStart_toStartOf="@+id/hotPropertyType"
                 app:layout_constraintTop_toBottomOf="@+id/hotPropertyType"
-                app:srcCompat="@drawable/ic_baseline_location_on_24" />
+                app:srcCompat="@drawable/ic_frame" />
 
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/hotCityTxt"
                 app:layout_constraintTop_toBottomOf="@+id/hotPropertyType"
                 app:srcCompat="@drawable/line" />
@@ -97,9 +99,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
-                android:text="/yr"
-                android:textSize="12sp"
+                android:text="/year"
                 android:textColor="@color/black"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/hotPropertyPrice"
                 app:layout_constraintStart_toEndOf="@+id/hotPropertyPrice"
                 app:layout_constraintTop_toTopOf="@+id/hotPropertyPrice" />

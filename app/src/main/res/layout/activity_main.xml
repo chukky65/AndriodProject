@@ -61,30 +61,18 @@
 
 
         <TextView
-            android:id="@+id/dateAndTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textColor="#F1912F"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
-
-
-        <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="22dp"
             android:layout_marginStart="20dp"
-            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_bold"
             android:text="Properties Near you"
             android:textColor="#2B2B2B"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dateAndTime" />
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvGrid"
@@ -117,12 +105,13 @@
             android:id="@+id/textView4"
             android:layout_width="64.71dp"
             android:layout_height="19dp"
+            android:layout_marginEnd="8dp"
             android:text="See More"
+            android:textColor="@color/blue"
             android:textSize="13sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintBottom_toBottomOf="@+id/bedroom"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView" />
-
+            app:layout_constraintTop_toTopOf="@+id/bedroom" />
 
         <TextView
             android:id="@+id/textView5"
@@ -130,8 +119,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="1dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:lineHeight="24px"
+            android:fontFamily="@font/poppins_bold"
             android:text="hot lease"
             android:textColor="#2B2B2B"
             android:textSize="16sp"
@@ -145,7 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="1dp"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/poppins_bold"
             android:lineHeight="24px"
             android:text="Recommended"
             android:textColor="#2B2B2B"
